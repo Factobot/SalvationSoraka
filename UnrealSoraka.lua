@@ -16,13 +16,13 @@ function AutoUpdate(data)
 	if tonumber(data) > tonumber(version) then
 		PrintChat("<font color='#00ffff'>Current version is outdated"  .. data)
         PrintChat("<font color='#00ffff'>Downloading script update, please wait...")
-        DownloadFileAsync("path", SCRIPT_PATH .. "UnrealSoraka.lua", function() PrintChat("Update Complete, press F6 2 times") return end)
+        DownloadFileAsync("https://raw.githubusercontent.com/Factobot/UnrealChampionSeries/master/UnrealSoraka.lua", SCRIPT_PATH .. "UnrealSoraka.lua", function() PrintChat("Update Complete, press F6 2 times") return end)
     else
     	PrintChat("<font color='#00ffff'>No new updates found")
     end
 end
 
-GetWebResultAsync("versionpath", AutoUpdate)
+GetWebResultAsync("https://raw.githubusercontent.com/Factobot/UnrealChampionSeries/master/UnrealSoraka.version", AutoUpdate)
 
 SorakaMenu:SubMenu("Combo", "Combo")
 SorakaMenu.Combo:Boolean("Q", "Use Q", true)
